@@ -7,6 +7,8 @@ public class Main {
 
         car1.changeGear(3);
         car2.changeGear(4);
+        car1.changeGear(5);
+        car2.changeGear(1);
 
     }
 }

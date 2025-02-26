@@ -9,8 +9,13 @@ public class Car {
 
     void changeGear(int newGear) {
         this.gear = newGear;
-        System.out.println("Your gear is now " + gear);
+        System.out.println("Your gear is now " + this.gear);
     }
 
-    Car (String color, String Brand, String model, int year) {}
+    Car (String color, String Brand, String model, int year) {
+        this.color = color;
+        this.Brand = Brand;
+        this.model = model;
+        this.year = year;
+    }
 }
