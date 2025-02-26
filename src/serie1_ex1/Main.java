@@ -8,7 +8,10 @@ public class Main {
         Printer printer2 = new Printer();
         printer2.isOn = false;
 
-        System.out.println(printer1.getIsOn());
-        System.out.println(printer2.getIsOn());
+        printer1.turnOn();
+        printer2.turnOff();
+
+        System.out.println(printer1.isOn);
+        System.out.println(printer2.isOn);
     }
 }

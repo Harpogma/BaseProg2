@@ -3,7 +3,11 @@ package serie1_ex1;
 public class Printer {
     Boolean isOn;
 
-    Boolean getIsOn() {
-        return this.isOn;
+    void turnOn() {
+        this.isOn = true;
+    }
+
+    void turnOff() {
+        this.isOn = false;
     }
 }
