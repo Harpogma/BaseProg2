@@ -23,6 +23,7 @@ public class Main {
         System.out.println("Number of sheet: " + printer1.getNumberOfSheet());
 
         printer1.print(newSheet);
+        //printer1.turnOff();
 
         printer1.ejectPrintedPaper();
     }

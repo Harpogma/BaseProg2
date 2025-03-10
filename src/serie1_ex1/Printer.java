@@ -39,12 +39,19 @@ public class Printer {
     public void print(Sheet content) {
         if (this.state && this.sheet >= 1) {
             printedQueue.add(content);
+        } else {
+            System.out.println("You must turn the printer on before printing!");
         }
     }
 
     public void ejectPrintedPaper() {
-        for(Sheet sheet : this.printedQueue) {
-            System.out.println(sheet.getText());
+        if (state) {
+            for(Sheet sheet : this.printedQueue) {
+                System.out.println(sheet.getText());
+            }
+        } else {
+            System.out.println("You must turn the printer on to get your paper!");
         }
+
     }
 }
