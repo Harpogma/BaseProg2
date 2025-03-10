@@ -1,13 +1,50 @@
 package serie1_ex1;
 
-public class Printer {
-    Boolean isOn;
+import java.util.ArrayList;
 
-    void turnOn() {
-        this.isOn = true;
+public class Printer {
+    private boolean state = false;
+    private int sheet;
+    ArrayList<Sheet> printedQueue;
+
+    public Printer() {
+        this.printedQueue = new ArrayList<Sheet>();
+    }
+    public Printer(boolean state, int sheet) {
+        this.state = state;
+        this.sheet = sheet;
+        this.printedQueue = new ArrayList<Sheet>();
     }
 
-    void turnOff() {
-        this.isOn = false;
+    public void turnOn() {
+        this.state = true;
+    }
+
+    public void turnOff() {
+        this.state = false;
+    }
+
+    public boolean getStatus() {
+        return this.state;
+    }
+
+    public int getNumberOfSheet() {
+        return this.sheet;
+    }
+
+    public void fillSheet(int quantity) {
+        this.sheet = quantity;
+    }
+
+    public void print(Sheet content) {
+        if (this.state && this.sheet >= 1) {
+            printedQueue.add(content);
+        }
+    }
+
+    public void ejectPrintedPaper() {
+        for(Sheet sheet : this.printedQueue) {
+            System.out.println(sheet.getText());
+        }
     }
 }
