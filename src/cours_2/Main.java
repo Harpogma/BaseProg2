@@ -4,6 +4,7 @@ import cours_2.classes.CreditCard;
 import cours_2.classes.Product;
 import cours_2.classes.ShoppingCart;
 import cours_2.classes.User;
+import cours_2.classes.Shoes;
 
 import java.util.ArrayList;
 
@@ -24,16 +25,17 @@ public class Main {
             System.out.println(card);
         }
 
-        Product product1 = new Product("Veste", 159);
-        Product product2 = new Product("Pantalon", 82);
+        Product product1 = new Product("Veste", 159, 25);
+        Product product2 = new Product("Pantalon", 82, 25);
+
+        Shoes shoes1 = new Shoes("Adidas", 129, 10, 46);
+
         ShoppingCart cart1 = new ShoppingCart(product1);
         cart1.addItemToCart(product2);
+        cart1.addItemToCart(shoes1);
+        System.out.println(shoes1.getPrice());
 
         System.out.println("Le prix total est de " + cart1.totalCartAmount());
-
-        for(Product item : cart1.getCart()) {
-            System.out.println(item.getPrice());
-        }
 
     }
 }

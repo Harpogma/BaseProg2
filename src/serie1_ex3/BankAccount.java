@@ -1,6 +1,6 @@
 package serie1_ex3;
 
-import ch.comem.Clavier;
+
 
 public class BankAccount {
     int balance;
@@ -29,7 +29,7 @@ public class BankAccount {
     BankAccount (int balance) {
         if (balance < 100) {
             do {
-                balance = Clavier.rend_int("Le montant doit être d'au moins 100.-. Veuillez saisir un nouveau montant : ");
+                //balance = Clavier.rend_int("Le montant doit être d'au moins 100.-. Veuillez saisir un nouveau montant : ");
                 this.balance = balance;
             } while (balance < 100);
         }

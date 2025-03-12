@@ -22,6 +22,7 @@ public class ShoppingCart {
         int total = 0;
         for(Product item : this.shoppingCart) {
             total += item.getPrice();
+            total += item.getShippingCost();
         }
 
         return total;
