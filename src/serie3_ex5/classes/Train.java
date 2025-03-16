@@ -7,19 +7,18 @@ public class Train {
     private ArrayList<Wagon> trainComposition = new ArrayList<>();
 
     public Train(ArrayList<Wagon> trainComposition) {
-        if (isLocomotiveFirst(trainComposition)) {
-            this.trainComposition = trainComposition;
-        } else {
-            System.out.println("A locomotive can only be the first wagon of the train!");
-        }
-
+        this.trainComposition = trainComposition;
     }
 
-    public void addWagon(Wagon wagon, int placeOfWagon) {
-        if(wagon instanceof Locomotive && placeOfWagon == 0) {
+    public boolean addWagon(Wagon wagon, int placeOfWagon) {
+
+        if(wagon instanceof Locomotive && placeOfWagon != 0) {
             System.out.println("A locomotive can only be the first wagon of the train!");
+            return false;
         } else {
             this.trainComposition.add(placeOfWagon, wagon);
+            System.out.println("A " + wagon.getClass().getSimpleName() + " was added in position " + placeOfWagon);
+            return true;
         }
     }
 

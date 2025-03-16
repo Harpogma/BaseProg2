@@ -8,18 +8,21 @@ public class Main {
     public static void main(String[] args) {
         Locomotive loco = new Locomotive(10);
         FreightWagon goods1 = new FreightWagon(23, "Avocats", 2000);
-        FreightWagon goods2 = new FreightWagon(25, "Café", 1400);
-        PassengerWagon pass1 = new PassengerWagon(32, 67);
+        FreightWagon goods2 = new FreightWagon(25, "Coffee", 1400);
+        PassengerWagon pass1 = new PassengerWagon(23, 65);
         PassengerWagon pass2 = new PassengerWagon(36, 71);
 
         ArrayList<Wagon> trainComposition = new ArrayList<>();
-        trainComposition.add(loco);
-        trainComposition.add(pass1);
-        trainComposition.add(loco);
-
         Train train1 = new Train(trainComposition);
-        System.out.println("nombre de wagon " + trainComposition.size());
+
+        train1.addWagon(loco, 0);
+
+        train1.addWagon(goods1, 1);
+
+        train1.addWagon(loco, 2);
+
 
     }
+
 }
 
