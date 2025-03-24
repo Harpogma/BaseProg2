@@ -22,8 +22,10 @@ public class Train {
         }
     }
 
-    public ArrayList<Wagon> getComposition() {
-        return this.trainComposition;
+    public void printComposition() {
+        for(Wagon wag : this.trainComposition) {
+            System.out.println(wag.getClass().getSimpleName().toLowerCase());
+        }
     }
 
     public boolean isLocomotiveFirst(ArrayList<Wagon> trainComposition) {
