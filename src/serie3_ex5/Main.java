@@ -22,6 +22,7 @@ public class Main {
         train1.addWagon(loco, 2);
 
         train1.printComposition();
+
     }
 
 }

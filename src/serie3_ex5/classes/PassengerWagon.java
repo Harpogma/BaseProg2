@@ -8,4 +8,8 @@ public class PassengerWagon extends Wagon {
         this.passengerNumber = passengerNumber;
     }
 
+    public void printPassengerWagon() {
+        System.out.println(this.passengerNumber);
+    }
+
 }
