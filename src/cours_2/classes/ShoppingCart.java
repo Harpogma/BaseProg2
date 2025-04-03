@@ -28,4 +28,14 @@ public class ShoppingCart {
         return total;
     }
 
+    public String totalCartAmount(String currency) {
+        int total = 0;
+        for(Product item : this.shoppingCart) {
+            total += item.getPrice();
+            total += item.getShippingCost();
+        }
+
+        return this.totalCartAmount() + currency;
+    }
+
 }

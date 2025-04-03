@@ -1,14 +1,12 @@
 package cours_2.classes;
 
-public class Product {
+public abstract class Product {
     private String product;
     private int price;
-    private int shippingCost;
 
-    public Product(String product, int price, int shippingCost) {
+    public Product(String product, int price) {
         this.product = product;
         this.price = price;
-        this.shippingCost = shippingCost;
     }
 
     public String getProduct() {
@@ -19,7 +17,6 @@ public class Product {
         return this.price;
     }
 
-    public int getShippingCost() {
-        return this.shippingCost;
-    }
+    public abstract int getShippingCost();
+
 }
