@@ -1,4 +1,18 @@
 package serie4_ex2.classes;
 
-public class Shape {
+abstract class Shape {
+    private String name;
+    public Shape(String name){
+        this.name = name;
+    }
+    public String getName() {
+        return this.name;
+    }
+    public void displayInfo() {
+        System.out.println("Name: " + this.getName()
+                + ", Area: "+ this.calculateArea()
+                + ", Perimeter: "+ this.calculatePerimeter());
+    }
+    public abstract double calculateArea();
+    public abstract double calculatePerimeter();
 }
