@@ -1,9 +1,10 @@
 package cours_2.classes;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ShoppingCart {
-    private ArrayList<Product> shoppingCart;
+    private List<Product> shoppingCart;
 
     public ShoppingCart(Product item) {
         this.shoppingCart = new ArrayList<>();
@@ -14,7 +15,7 @@ public class ShoppingCart {
         this.shoppingCart.add(item);
     }
 
-    public ArrayList<Product> getCart() {
+    public List<Product> getCart() {
         return this.shoppingCart;
     }
 

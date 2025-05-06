@@ -1,6 +1,6 @@
 package cours_2.classes;
 
-public class Licence extends Product {
+public class Licence extends Product implements Downloadable {
     private String version;
     private String downloadLink;
 
@@ -10,10 +10,12 @@ public class Licence extends Product {
         this.downloadLink = downloadLink;
     }
 
+    @Override
     public String getVersion() {
         return this.version;
     }
 
+    @Override
     public String getDownloadLink() {
         return this.downloadLink;
     }
