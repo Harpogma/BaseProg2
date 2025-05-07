@@ -1,25 +1,25 @@
 package serie5_ex2.classes;
 
+import java.math.BigDecimal;
+
 public class BankAccount {
     private String accountNumber;
-    private double balance;
-
-    public BankAccount(String accountNumber, double balance) {
+    private BigDecimal balance;
+    static private double interest;
+    
+    public BankAccount(String accountNumber, BigDecimal initialValue) {
         this.accountNumber = accountNumber;
-        this.balance = balance;
+        this.balance = initialValue;
     }
 
-    public void deposit(double amount) {
-        this.balance += amount;
+    public void addToBalance(BigDecimal amount) {
+        balance.add(amount);
     }
 
-    public double getSolde() {
+    public BigDecimal getSolde() {
         return this.balance;
     }
 
-    public void setSolde(double newAmount) {
-        this.balance += newAmount;
-    }
-
+        
     
 }

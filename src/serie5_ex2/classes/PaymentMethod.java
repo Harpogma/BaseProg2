@@ -1,5 +1,7 @@
 package serie5_ex2.classes;
 
+import java.math.BigDecimal;
+
 public interface PaymentMethod {
-    void pay(double amount, BankAccount destinationAccount) ;
+    void pay(BigDecimal amount, BankAccount destinationAccount) ;
 }

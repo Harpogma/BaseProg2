@@ -1,5 +1,7 @@
 package serie5_ex2.classes;
 
+import java.math.BigDecimal;
+
 public class CreditCardPayment implements PaymentMethod {
     private String cardNumber;
     private String cardHolder;
@@ -11,8 +13,8 @@ public class CreditCardPayment implements PaymentMethod {
         this.expireDate = expireDate;
     }
 
-    public void pay(double amount, BankAccount destinationAccount) {
-        transfertMoney(amount, destinationAccount);
+    public void pay(BigDecimal amount, BankAccount destinationAccount) {
+        destinationAccount.addToBalance(amount);
         System.out.println("This payment is in CreditCard");
         System.out.println("The cardNumber is: " + this.cardNumber);
         System.out.println("The cardHolder name is: " + this.cardHolder);
@@ -20,7 +22,5 @@ public class CreditCardPayment implements PaymentMethod {
         System.out.println("The solde is: " + destinationAccount.getSolde());
     }
 
-    public void transfertMoney(double amount, BankAccount bankAccount) {
-        bankAccount.setSolde(amount);
-    }
+    
 }
