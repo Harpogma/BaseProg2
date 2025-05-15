@@ -1,42 +1,33 @@
 package cours_2.classes;
 
+
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class ShoppingCart {
-    private List<Product> shoppingCart;
+    private List<Product> produits = new ArrayList<>();
 
-    public ShoppingCart(Product item) {
-        this.shoppingCart = new ArrayList<>();
-        this.shoppingCart.add(item);
+    public void addProduct(Product prod){
+        this.produits.add(prod);
     }
 
-    public void addItemToCart(Product item) {
-        this.shoppingCart.add(item);
+    public List<Product> getCartProducts(){
+        return this.produits;
     }
 
-    public List<Product> getCart() {
-        return this.shoppingCart;
-    }
-
-    public int totalCartAmount() {
+    public int getTotalCartPrice(){
         int total = 0;
-        for(Product item : this.shoppingCart) {
-            total += item.getPrice();
-            total += item.getShippingCost();
-        }
+        for(Product prod : this.produits){
 
+            total += prod.getPrice()+ prod.getShippingCosts();
+        }
         return total;
     }
 
-    public String totalCartAmount(String currency) {
-        int total = 0;
-        for(Product item : this.shoppingCart) {
-            total += item.getPrice();
-            total += item.getShippingCost();
-        }
-
-        return this.totalCartAmount() + currency;
+    public String getTotalCartPrice(String monnaie){
+        return this.getTotalCartPrice() + " " + monnaie;
     }
 
 }
+

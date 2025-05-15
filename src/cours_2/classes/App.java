@@ -1,44 +1,44 @@
 package cours_2.classes;
 
-public class App extends Product implements Downloadable {
-    private String version;
-    private String downloadLink;
+import java.util.Objects;
 
-    public App(String product, int price, String version, String downloadLink) {
-        super(product, price);
-        this.version = version;
-        this.downloadLink = downloadLink;
+public class App extends Product implements Downloadable{
+    private double version;
+    private String link;
+
+    public App(String name, int price, double version, String link) {
+        super(name, price);
+        this.version= version;
+        this.link = link;
+        //System.out.println(super.maMethode());
     }
 
     @Override
-    public String getVersion() {
-        return this.version;
-    }
-
-    @Override
-    public String getDownloadLink() {
-        return this.downloadLink;
-    }
-
-    public void setversion(String version) {
-        this.version = version;
-    }
-
-    public void setDownloadLink(String downloadLink) {
-        this.downloadLink = downloadLink;
-    }
-
-    @Override
-    public int getShippingCost() {
+    public double getShippingCosts() {
         return 0;
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (o instanceof App) {
-            return this.version.equals(((App) o).getVersion()) && this.downloadLink.equals(((App) o).getDownloadLink()) && (super.getPrice() == ((App) o).getPrice()) && super.getProduct().equals(((App) o).getProduct());
-        } else {
-            return false;
-        }
+    public String getDownloadLink() {
+        return this.link;
     }
+
+    @Override
+    public double getVersion() {
+        return this.version;
+    }
+
+   @Override
+    public boolean equals(Object o){
+        if(o instanceof App app){
+            return this.getName().equals(app.getName()) && super.getPrice() == app.getPrice() &&
+                    this.link.equals(app.link) && this.version == app.version;
+        }
+        return false;
+   }
+
+   @Override
+    public int hashCode(){
+        return Objects.hash(this.getName(), super.getPrice(), this.link, this.version);
+   }
 }

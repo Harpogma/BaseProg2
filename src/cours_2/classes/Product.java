@@ -1,30 +1,36 @@
 package cours_2.classes;
 
-import java.util.ArrayList;
 
 public abstract class Product {
-    private String product;
+    private String name;
     private int price;
-    public static int count = 0;
+    private static int counter = 0;
+    private Integer id;
 
-    public Product(String product, int price) {
-        this.product = product;
+    public Product(String name, int price){
+        this.name = name;
         this.price = price;
-        count += 1;
+        counter++;
+        this.id = counter;
     }
 
-    public static int getCount() {
-        return count;
+    public Integer getId(){
+        return this.id;
     }
 
-    public String getProduct() {
-        return this.product;
+    public static int getCounter(){
+        return counter;
     }
 
-    public int getPrice() {
+    public String getName() {
+        return this.name;
+    }
+    public int getPrice(){
         return this.price;
     }
-
-    public abstract int getShippingCost();
+    public static int maMethode(){
+        return 3;
+    }
+    public abstract double getShippingCosts();
 
 }
